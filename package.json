@@ -1,5 +1,5 @@
 {
-  "name": "bimaxpress-master-api",
+  "name": "bimaxpress-email_nodejs_service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "loadtest": "*"
   }
 }

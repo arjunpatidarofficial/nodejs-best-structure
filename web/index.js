@@ -3,8 +3,7 @@ const morgen = require("morgan");
 const createError = require("http-errors");
 const { mongoClient, elasticClient } = require("../helpers/connection");
 const { infoLogger, errorLogger } = require("../utils/logger");
-
-const { authRouter, voterRouter, masterRouter } = require("./routes");
+const { authRouter } = require("./routes");
 
 const { verifyAccessToken } = require("../helpers/jwt/index.js");
 const swaggerUi = require("swagger-ui-express");
@@ -39,12 +38,10 @@ mongoClient();
 
 app.get("/", async (req, res, next) => {
   // console.log(req.headers['authorization'])
-  res.send("Welcome to bimaxress");
+  res.send("Welcome to bimaxress node hospital service");
 });
 
 app.use("/auth", authRouter);
-app.use("/master", masterRouter);
-app.use("/voter", voterRouter);
 
 app.use(async (req, res, next) => {
   next(createError.NotFound("This route does not exist"));
